@@ -135,7 +135,7 @@ typedef struct VkAccelerationStructureBuildSizesInfoKHR {
 } VkAccelerationStructureBuildSizesInfoKHR;
 ```
 
-scratch buffer是什么官方文档没有明确的解释，我个人认为它是用来存放build过程中产生数据的临时buffer需要在build之前构建并在build之后释放。在创建scratch buffer时至少需要两个flag:` VK_BUFFER_USAGE_STORAGE_BUFFER_BIT` (https://vulkan.lunarg.com/doc/view/1.3.216.0/windows/1.3-extensions/vkspec.html#VUID-vkCmdBuildAccelerationStructuresKHR-pInfos-03674)和`VK_BUFFER_USAGE_SHADER_DEVICE_ADDRESS_BIT` (为了获取device address)。
+scratch buffer是什么官方文档没有明确的解释，我个人认为它是用来存放build过程中产生数据的临时buffer需要在build之前构建并在build之后释放。在创建scratch buffer时至少需要两个flag:` VK_BUFFER_USAGE_STORAGE_BUFFER_BIT` (https://vulkan.lunarg.com/doc/view/1.3.216.0/windows/1.3-extensions/vkspec.html#VUID-vkCmdBuildAccelerationStructuresKHR-pInfos-03674) 和 `VK_BUFFER_USAGE_SHADER_DEVICE_ADDRESS_BIT` (为了获取device address)。
 
 `VkAccelerationStructureBuildSizesInfoKHR` 的信息可以通过vkGetAccelerationStructureBuildSizesKHR 获取。
 
