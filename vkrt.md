@@ -351,7 +351,7 @@ vkCmdTraceRaysKHR(cmdBuf,&rayGenRegion,&missRegion,&hitRegion,&callRegion,screen
 
 ```glsl
 //caller
-layout(location = 0) traceRayExt bool payload;
+layout(location = 0) rayPayloadInEXT bool payload;
 void main(){
     traceRayExt(
     	...,
